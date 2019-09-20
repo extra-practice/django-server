@@ -48,6 +48,7 @@ const ColorList = ({ colors, updateColors, getData }) => {
         console.log(res)
         updateColors(res.data)
         getData();
+        setNewColor(initialColor)
       })
       .catch(err => console.log(err))
   }
@@ -118,7 +119,7 @@ const ColorList = ({ colors, updateColors, getData }) => {
         <label>Hex Code</label>
         <input
           name="hex"
-          value={newColor.color.hex}
+          value={newColor.code.hex}
           onChange={e =>
             setNewColor({
               ...newColor,
