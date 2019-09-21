@@ -122,6 +122,7 @@ const ColorList = ({ colors, updateColors, getData }) => {
         <label>Hex Code</label>
         <input
           name="hex"
+          type="color"
           value={newColor.code.hex}
           onChange={e =>
             setNewColor({
