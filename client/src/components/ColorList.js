@@ -26,6 +26,7 @@ const ColorList = ({ colors, updateColors, getData }) => {
     axiosWithAuth().put(`/colors/${colorToEdit.id}`, colorToEdit)
       .then(res => {
         getData();
+        setEditing(false)
       })
       .catch(err => console.log(err))
   };
@@ -37,8 +38,10 @@ const ColorList = ({ colors, updateColors, getData }) => {
     axiosWithAuth().delete(`/colors/${color.id}`)
       .then(res => {
         getData()
+
       })
       .catch(err => console.log(err))
+
   };
 
   const addColor = e => {
